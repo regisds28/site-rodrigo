@@ -21,6 +21,10 @@ const start = () => {
     shapeOneOpacity1();
     titlePhotoOpacity0();
   });
+  window1.addEventListener('click', () => {
+    alert('clicou, bagaça');
+  });
+
   window2.addEventListener('mouseover', () => {
     handleMouseOverBg2();
     shapeTwoOpacity0();
