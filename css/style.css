@@ -5,8 +5,39 @@ html,
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
+  overflow: hidden;
   background: #000;
+}
+
+.logo-center {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  top: 20px;
+}
+
+.presentation {
+  position: fixed;
+  z-index: 9998;
+  width: 100%;
+  bottom: 20px;
+}
+
+.presentation i {
+  color: #fff;
+  font-size: 30px;
+  align-items: center;
+  vertical-align: bottom;
+  border: 1px solid;
+  padding: 0px 40px 10px 40px;
+  border-radius: 10px;
+}
+
+.logo-center img {
+  display: flex;
+  align-items: center;
+  vertical-align: top;
+  margin: 0 auto;
 }
 
 .bg1,
@@ -17,12 +48,11 @@ html,
   background-repeat: no-repeat;
   background-size: cover;
   filter: saturate(0%);
+  margin-left: auto;
   opacity: 0.5;
   padding: 0;
   cursor: pointer;
   transition: filter 1s, opacity 1s, height 1s;
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
 }
 
 .bg1 {
@@ -38,9 +68,13 @@ html,
 .mouse-over-bg {
   filter: saturate(100%);
   opacity: 1;
-  height: 102%;
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
+  height: 101%;
+}
+
+.hide-photo {
+  position: relative;
+  transition: margin-left 2s ease-in-out;
+  margin-left: -300px;
 }
 
 .shape1,
@@ -72,11 +106,20 @@ html,
   opacity: 0;
   animation: neonGlow 3s infinite alternate;
   transition: opacity 1s, animation 4s;
-  box-shadow: 1px 0;
 }
 
 .title-opacity {
   opacity: 1;
+}
+
+@keyframes hidePhoto {
+  0% {
+    margin-left: auto;
+  }
+
+  100% {
+    margin-left: -400px;
+  }
 }
 
 @keyframes neonGlow {
