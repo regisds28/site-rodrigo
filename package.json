@@ -1,0 +1,21 @@
+{
+  "name": "site-rodrigo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regisds28/site-rodrigo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/regisds28/site-rodrigo/issues"
+  },
+  "homepage": "https://github.com/regisds28/site-rodrigo#readme",
+  "type": "module"
+}
