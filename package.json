@@ -17,5 +17,8 @@
     "url": "https://github.com/regisds28/site-rodrigo/issues"
   },
   "homepage": "https://github.com/regisds28/site-rodrigo#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
