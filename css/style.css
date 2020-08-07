@@ -52,7 +52,7 @@ html,
   opacity: 0.5;
   padding: 0;
   cursor: pointer;
-  transition: filter 0.5s, opacity 0.5s, height 0.5s;
+  transition: filter 0.1s, opacity 0.1s, height 0.1s;
 }
 
 .bg1 {
@@ -105,7 +105,7 @@ html,
   font-size: 50px;
   opacity: 0;
   animation: neonGlow 1s infinite alternate;
-  transition: opacity 1s, animation 2s;
+  transition: opacity 1s, animation 1s;
 }
 
 .title-opacity {
