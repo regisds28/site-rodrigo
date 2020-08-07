@@ -104,8 +104,8 @@ html,
   font-weight: 900;
   font-size: 50px;
   opacity: 0;
-  animation: neonGlow 1s infinite alternate;
-  transition: opacity 1s, animation 1s;
+  animation: neonGlow 5s infinite alternate;
+  transition: opacity 0.5s, animation 0.5s;
 }
 
 .title-opacity {
