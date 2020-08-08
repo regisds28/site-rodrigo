@@ -1,3 +1,13 @@
+@font-face {
+  font-family: Monserrat;
+  src: url('../fonts/Montserrat-Black.ttf') format('ttf'),
+    url('../fonts/Montserrat-Bold.ttf') format('ttf'),
+    url('../fonts/Montserrat-Light.ttf') format('ttf'),
+    url('../fonts/Montserrat-SemiBold.ttf') format('ttf'),
+    url('../fonts/Montserrat-Thin.ttf') format('ttf'),
+    url('../fonts/Montserrat-ExtraBold.ttf') format('ttf');
+}
+
 body,
 html,
 .container-fluid,
@@ -6,7 +16,10 @@ html,
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #000;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+  /* background: url('../img//logo_320x370.png') #000; */
 }
 
 .logo-center {
@@ -14,23 +27,104 @@ html,
   z-index: 9999;
   width: 100%;
   top: 20px;
+  opacity: 1;
+  transition: filter 1.5s, top 1.5s;
 }
 
-.presentation {
+.btnBottomPresentation {
   position: fixed;
   z-index: 9998;
   width: 100%;
   bottom: 20px;
+  opacity: 1;
+  transition: opacity 1s;
 }
 
-.presentation i {
+.btnTopPresentation {
+  position: fixed;
+  z-index: 9998;
+  width: 100%;
+  top: 20px;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.btnBottomPresentation i {
   color: #fff;
   font-size: 30px;
   align-items: center;
-  vertical-align: bottom;
-  border: 1px solid;
+  border: 0.5px solid;
   padding: 0px 40px 10px 40px;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.btnTopPresentation i {
+  color: #ccc;
+  font-size: 30px;
+  align-items: center;
+  border: 0.5px solid;
+  padding: 10px 20px 0px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btnBottomPresentation {
+  vertical-align: bottom;
+}
+
+.btnTopPresentation {
+  vertical-align: top;
+}
+
+.btnBottomPresentation i:hover {
+  background: #ccc;
+  opacity: 0.3;
+  color: #000;
+}
+
+.btnTopPresentation i:hover {
+  background: #000;
+  opacity: 0.3;
+  color: #ccc;
+}
+
+.btnHidePresentation {
+  opacity: 0;
+}
+
+.btnShowPresentation {
+  opacity: 1;
+}
+
+.presentation {
+  background: #fff;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: calc(100vh - 240px);
+  overflow: auto;
+  z-index: 1;
+}
+
+.presentation h3 {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.presentation .container:first-child {
+  font-size: 23px;
+  font-weight: lighter;
+}
+
+.principal-hide {
+  margin-top: -60%;
+}
+
+.logo-invert {
+  filter: invert(85%);
+  position: fixed;
+  top: 100px;
 }
 
 .logo-center img {
@@ -38,6 +132,10 @@ html,
   align-items: center;
   vertical-align: top;
   margin: 0 auto;
+}
+
+.principal {
+  transition: margin-top 1s ease-in-out;
 }
 
 .bg1,
@@ -49,7 +147,7 @@ html,
   background-size: cover;
   filter: saturate(0%);
   margin-left: auto;
-  opacity: 0.5;
+  opacity: 0.7;
   padding: 0;
   cursor: pointer;
   transition: filter 0.1s, opacity 0.1s, height 0.1s;
@@ -104,7 +202,8 @@ html,
   font-weight: 900;
   font-size: 50px;
   opacity: 0;
-  animation: neonGlow 5s infinite alternate;
+  /* animation: neonGlow 5s infinite alternate; */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
   transition: opacity 0.5s, animation 0.5s;
 }
 
@@ -120,20 +219,4 @@ html,
   100% {
     margin-left: -400px;
   }
-}
-
-@keyframes neonGlow {
-  0% {
-    text-shadow: 0 0 80px rgba(255, 255, 255, 0.8);
-  }
-  100% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  }
-}
-
-#canvas {
-  position: fixed;
-  transform: rotate(20deg);
-  height: 100%;
-  width: 100%;
 }

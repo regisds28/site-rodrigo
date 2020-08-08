@@ -1,3 +1,5 @@
+let principal = document.querySelector('.principal');
+
 let window1 = document.querySelector('.bg1');
 let window2 = document.querySelector('.bg2');
 let window3 = document.querySelector('.bg3');
@@ -10,7 +12,27 @@ let titlePhoto = document.querySelector('.title-photo');
 let titleVideo = document.querySelector('.title-video');
 let titleDesign = document.querySelector('.title-design');
 
+let btnTopPresentation = document.querySelector('.btnTopPresentation');
+let btnBottomPresentation = document.querySelector('.btnBottomPresentation');
+let logo = document.querySelector('.logo-center');
+
 const start = () => {
+  btnTopPresentation.classList.add('btnHidePresentation');
+
+  btnBottomPresentation.addEventListener('click', () => {
+    clickShowPresentation();
+    btnBottomPresentationHide();
+    btnTopPresentationShow();
+    blackLogo();
+  });
+
+  btnTopPresentation.addEventListener('click', () => {
+    clickHidePresentation();
+    btnBottomPresentationShow();
+    btnTopPresentationHide();
+    whiteLogo();
+  });
+
   window1.addEventListener('mouseover', () => {
     handleMouseOverBg1();
     shapeOneOpacity0();
@@ -43,6 +65,23 @@ const start = () => {
     titleDesignOpacity0();
   });
 };
+
+const clickShowPresentation = () => principal.classList.add('principal-hide');
+const btnBottomPresentationHide = () =>
+  btnBottomPresentation.classList.add('btnHidePresentation');
+const btnBottomPresentationShow = () =>
+  btnBottomPresentation.classList.remove('btnHidePresentation');
+const blackLogo = () => logo.classList.add('logo-invert');
+
+const clickHidePresentation = () =>
+  principal.classList.remove('principal-hide');
+const btnTopPresentationShow = () => {
+  btnTopPresentation.classList.add('btnShowPresentation');
+};
+const btnTopPresentationHide = () => {
+  btnTopPresentation.classList.remove('btnShowPresentation');
+};
+const whiteLogo = () => logo.classList.remove('logo-invert');
 
 const shapeOneOpacity0 = () => shape1.classList.add('shape-none');
 const shapeOneOpacity1 = () => shape1.classList.remove('shape-none');
@@ -89,50 +128,4 @@ const handleMouseOutBg3 = () => {
   window3.classList.remove('mouse-over-bg');
 };
 
-const drawRain = () => {
-  let canvas = document.querySelector('#canvas'),
-    ctx = canvas.getContext('2d');
-
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-
-  let lines = [],
-    maxSpeed = 0.003,
-    spacing = 15,
-    xSpacing = 0,
-    n = innerWidth / spacing,
-    colors = ['#FFF', '#CCC', '#EEE', '#666'],
-    i;
-
-  for (i = 0; i < n; i++) {
-    xSpacing += spacing;
-    lines.push({
-      x: xSpacing,
-      y: Math.round(Math.random() * canvas.height),
-      width: 0.5,
-      height: Math.round(Math.random() * (innerHeight / 30)),
-      speed: Math.random() * maxSpeed + 0.2,
-      color: colors[Math.floor(Math.random() * colors.length)],
-    });
-  }
-
-  const draw = () => {
-    let i;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (i = 0; i < n; i++) {
-      ctx.fillStyle = lines[i].color;
-      ctx.fillRect(lines[i].x, lines[i].y, lines[i].width, lines[i].height);
-      lines[i].y += lines[i].speed;
-
-      if (lines[i].y > canvas.height) lines[i].y = 0 - lines[i].height;
-    }
-
-    requestAnimationFrame(draw);
-  };
-
-  draw();
-};
-
-drawRain();
 start();
