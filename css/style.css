@@ -49,14 +49,52 @@ html,
   transition: opacity 1s;
 }
 
-.btnBottomPresentation i {
+.btnBottomPresentation .fas {
   color: #fff;
   font-size: 30px;
   align-items: center;
-  border: 0.5px solid;
   padding: 0px 40px 10px 40px;
   border-radius: 10px;
   cursor: pointer;
+}
+.btnBottomPresentation .fab {
+  color: #fff;
+  font-size: 30px;
+  align-items: center;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.btnBottomPresentation .fas:hover {
+  background: #ccc;
+  opacity: 0.3;
+  color: #000;
+}
+
+.btnBottomPresentation {
+  vertical-align: bottom;
+}
+
+.fa-instagram-square:before {
+  content: '\e055';
+}
+
+.menu-presentation ul li {
+  display: inline;
+  list-style: none;
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-style: italic;
+  margin: 0 10px;
+}
+
+.point {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.social-media i {
+  margin: 4px;
 }
 
 .btnTopPresentation i {
@@ -69,18 +107,8 @@ html,
   cursor: pointer;
 }
 
-.btnBottomPresentation {
-  vertical-align: bottom;
-}
-
 .btnTopPresentation {
   vertical-align: top;
-}
-
-.btnBottomPresentation i:hover {
-  background: #ccc;
-  opacity: 0.3;
-  color: #000;
 }
 
 .btnTopPresentation i:hover {
@@ -105,6 +133,17 @@ html,
   height: calc(100vh - 240px);
   overflow: auto;
   z-index: 1;
+}
+
+.presentation::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+.presentation::-webkit-scrollbar {
+  width: 6px;
+  background: #f4f4f4;
+}
+.presentation::-webkit-scrollbar-thumb {
+  background: #dad7d7;
 }
 
 .presentation h3 {
